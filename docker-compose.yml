@@ -1,4 +1,4 @@
-version: "3.9"
+version: '3.9'
 
 services:
   praxis-lp:
@@ -9,10 +9,10 @@ services:
     env_file:
       - .env
     ports:
-      - "${PORT:-3000}:3000"
+      - '${PORT:-3000}:3000'
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:3000/ || exit 1"]
+      test: ['CMD-SHELL', 'wget --spider -q http://127.0.0.1:3000/ || exit 1']
       interval: 30s
       timeout: 5s
       retries: 3
