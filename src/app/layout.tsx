@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Praxis LP",
-  description: "Praxis LP is the landing page for the Praxis project.",
+  title: 'Praxis LP',
+  description: 'Praxis LP is the landing page for the Praxis project.',
 };
 
 export default function RootLayout({

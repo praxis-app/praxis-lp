@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  praxis-lp:
+    container_name: praxis-lp
+    build:
+      context: .
+      target: runner
+    env_file:
+      - .env
+    ports:
+      - '${PORT:-3000}:3000'
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD-SHELL', 'wget --spider -q "http://127.0.0.1:${PORT:-3000}/" || exit 1']
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
