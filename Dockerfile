@@ -1,41 +1,39 @@
-FROM node:22.11.0-alpine AS build_stage
-
-RUN apk add --update python3 build-base
-
-COPY src /app/src
-COPY view /app/view
-COPY common /app/common
-COPY content /app/content
-
-COPY package.json /app
-COPY package-lock.json /app
-COPY tsconfig.json /app
-COPY tsconfig.src.json /app
-COPY tsconfig.view.json /app
-COPY vite.config.mts /app
-COPY .eslintrc.cjs /app
-COPY start-prod.sh /app
+FROM node:24.11.1-alpine AS builder
 
 WORKDIR /app
+ENV NEXT_TELEMETRY_DISABLED=1
+
+RUN apk add --no-cache libc6-compat
+
+COPY package.json package-lock.json ./
 RUN npm ci
 
-# Build args
-ARG NODE_ENV
-ARG VITE_SERVER_PORT
-ARG DB_MIGRATIONS
+COPY next.config.ts ./
+COPY tsconfig.json ./
+COPY postcss.config.mjs ./
+COPY eslint.config.mjs ./
+COPY public ./public
+COPY src ./src
 
-# Build the app
 RUN npm run build
-RUN npm run build:client
 
-# Prep for runtime image
-RUN mv content dist/content
-RUN rm package-lock.json vite.config.mts .eslintrc.cjs
-RUN rm tsconfig.json tsconfig.view.json
-RUN rm -rf view
+FROM node:24.11.1-alpine AS runner
 
-FROM node:22.11.0-alpine AS runtime_stage
+WORKDIR /app
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=3000
 
-COPY --from=build_stage /app /app
-ENV DB_MIGRATIONS=${DB_MIGRATIONS}
-CMD [ "sh", "/app/start-prod.sh" ]
+RUN apk add --no-cache libc6-compat
+
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/package-lock.json ./package-lock.json
+
+RUN npm ci --omit=dev && npm cache clean --force
+
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+
+EXPOSE 3000
+
+CMD ["npm", "run", "start"]

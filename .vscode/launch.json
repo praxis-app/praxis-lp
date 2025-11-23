@@ -11,7 +11,7 @@
       "outputCapture": "std",
       "runtimeExecutable": "npm",
       "skipFiles": ["<node_internals>/**"],
-      "runtimeVersion": "22.11.0",
+      "runtimeVersion": "24.11.1",
       "restart": true,
       "type": "node"
     }
