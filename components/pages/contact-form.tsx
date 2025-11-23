@@ -37,7 +37,9 @@ export default function ContactForm() {
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    window.location.href = `mailto:${contactConfig.email}?subject=${values.subject}&body=${values.msg}`
+    window.location.assign(
+      `mailto:${contactConfig.email}?subject=${values.subject}&body=${values.msg}`
+    )
     form.reset()
   }
 

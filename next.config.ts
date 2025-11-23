@@ -7,7 +7,12 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
   images: {
-    domains: ['picsum.photos'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
+    ],
   },
 };
 
