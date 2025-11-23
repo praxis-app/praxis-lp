@@ -25,13 +25,13 @@ export default function Navbar() {
   return (
     <header className="select-none">
       <nav className="relative mx-auto flex items-center justify-between px-4 md:px-8 lg:max-w-7xl">
-        <div className="flex items-center justify-between py-3 md:py-5">
+        <div className="flex w-full items-center justify-between py-3 md:py-5">
           <Link href="/" onClick={handleClick}>
             <h1 className="text-2xl font-bold duration-200 lg:hover:scale-[1.10]">
               {siteConfig.name}
             </h1>
           </Link>
-          <div className="flex gap-1 md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
             <button
               className="text-primary focus:border-primary rounded-md p-2 outline-none focus:border"
               aria-label="Hamburger Menu"
