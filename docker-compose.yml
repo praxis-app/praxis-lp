@@ -8,10 +8,6 @@ services:
       target: runner
     env_file:
       - .env
-    environment:
-      NODE_ENV: ${NODE_ENV:-production}
-      PORT: ${PORT:-3000}
-      NEXT_TELEMETRY_DISABLED: 1
     ports:
       - "${PORT:-3000}:3000"
     restart: unless-stopped
