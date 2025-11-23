@@ -4,7 +4,10 @@ import { Icons } from "@/components/icons"
 
 export default function Features() {
   return (
-    <section className="container space-y-8 py-12 lg:py-20" id="features">
+    <section
+      className="container mx-auto space-y-8 px-4 py-12 lg:py-20"
+      id="features"
+    >
       {features.header || features.subheader ? (
         <HeadingText subtext={features.subheader} className="text-center">
           {features.header}
