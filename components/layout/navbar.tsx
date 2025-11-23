@@ -73,7 +73,7 @@ export default function Navbar() {
 
         {/* Desktop links absolutely centered relative to page */}
         <div className="absolute inset-y-0 left-1/2 hidden -translate-x-1/2 items-center md:flex">
-          <ul className="flex items-center space-x-6 text-primary opacity-60">
+          <ul className="text-primary flex items-center space-x-6 opacity-60">
             {navLinks.map((link) => (
               <li key={link.route}>
                 <Link className="hover:underline" href={link.path}>
@@ -86,7 +86,7 @@ export default function Navbar() {
 
         {/* Mobile menu overlay */}
         <div
-          className={`bg-background absolute left-0 right-0 top-full z-10 m-auto rounded-md border p-4 shadow md:hidden ${
+          className={`bg-background absolute top-full right-0 left-0 z-10 m-auto rounded-md border p-4 shadow md:hidden ${
             navbar ? 'block' : 'hidden'
           }`}
           style={{ width: '100%', maxWidth: '20rem' }}

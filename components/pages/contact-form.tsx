@@ -1,11 +1,11 @@
-"use client"
+'use client';
 
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import * as z from "zod"
-import { contactConfig } from "@/config/site"
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { contactConfig } from '@/config/site';
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -14,33 +14,33 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
 const formSchema = z.object({
   subject: z.string().min(1, {
-    message: "Subject is required",
+    message: 'Subject is required',
   }),
   msg: z.string().min(1, {
-    message: "Message is required",
+    message: 'Message is required',
   }),
-})
+});
 
 export default function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      subject: "",
-      msg: "",
+      subject: '',
+      msg: '',
     },
-  })
+  });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     window.location.assign(
-      `mailto:${contactConfig.email}?subject=${values.subject}&body=${values.msg}`
-    )
-    form.reset()
+      `mailto:${contactConfig.email}?subject=${values.subject}&body=${values.msg}`,
+    );
+    form.reset();
   }
 
   return (
@@ -84,5 +84,5 @@ export default function ContactForm() {
         </Button>
       </form>
     </Form>
-  )
+  );
 }

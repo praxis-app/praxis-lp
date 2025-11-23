@@ -1,28 +1,28 @@
 export type SiteConfig = {
-  name: string
-  author: string
-  description: string
-  keywords: Array<string>
+  name: string;
+  author: string;
+  description: string;
+  keywords: Array<string>;
   url: {
-    base: string
-    author: string
-  }
-  ogImage: string
-}
+    base: string;
+    author: string;
+  };
+  ogImage: string;
+};
 
 export type ContactConfig = {
-  email: string
-}
+  email: string;
+};
 
 export type Settings = {
-  themeToggleEnabled: boolean
-}
+  themeToggleEnabled: boolean;
+};
 
 export type Layout = {
-  heroHeader: string
-  featureCards: string
+  heroHeader: string;
+  featureCards: string;
   headers: {
-    featureCards: string
-    features: string
-  }
-}
+    featureCards: string;
+    features: string;
+  };
+};

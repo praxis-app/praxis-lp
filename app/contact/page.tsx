@@ -1,9 +1,9 @@
-import ContactForm from "@/components/pages/contact-form"
-import HeadingText from "@/components/heading-text"
+import ContactForm from '@/components/pages/contact-form';
+import HeadingText from '@/components/heading-text';
 
 export const metadata = {
-  title: "Contact",
-}
+  title: 'Contact',
+};
 
 export default function Contact() {
   return (
@@ -15,5 +15,5 @@ export default function Contact() {
       </div>
       <ContactForm />
     </main>
-  )
+  );
 }

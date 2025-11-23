@@ -1,4 +1,4 @@
-import { Settings } from "@/types"
+import { Settings } from '@/types';
 
 /* ====================
 [> WEBSITE SETTINGS <]
@@ -7,4 +7,4 @@ import { Settings } from "@/types"
 
 export const settings: Settings = {
   themeToggleEnabled: true,
-}
+};

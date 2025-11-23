@@ -1,12 +1,12 @@
-import "./globals.css"
-import { siteConfig } from "@/config/site"
-import { Inter } from "next/font/google"
-import Navbar from "@/components/layout/navbar"
-import Footer from "@/components/layout/footer"
-import { ThemeProvider } from "@/components/theme-provider"
-import { settings } from "@/config/settings"
+import './globals.css';
+import { siteConfig } from '@/config/site';
+import { Inter } from 'next/font/google';
+import Navbar from '@/components/layout/navbar';
+import Footer from '@/components/layout/footer';
+import { ThemeProvider } from '@/components/theme-provider';
+import { settings } from '@/config/settings';
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url.base),
@@ -24,8 +24,8 @@ export const metadata = {
   ],
   creator: siteConfig.author,
   openGraph: {
-    type: "website",
-    locale: "en_US",
+    type: 'website',
+    locale: 'en_US',
     url: siteConfig.url.base,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -40,33 +40,33 @@ export const metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@_rdev7",
+    creator: '@_rdev7',
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: '/favicon.ico',
   },
-}
+};
 
 export const viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
-}
+};
 
 interface RootLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} flex min-h-screen flex-col bg-background text-primary`}
+        className={`${inter.className} bg-background text-primary flex min-h-screen flex-col`}
       >
         {settings.themeToggleEnabled ? (
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
@@ -83,5 +83,5 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       </body>
     </html>
-  )
+  );
 }

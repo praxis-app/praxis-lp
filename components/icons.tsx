@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from 'next/image';
 import {
   BsMoonStars,
   BsSun,
@@ -8,32 +8,32 @@ import {
   BsChevronDown,
   BsFire,
   BsCheck2,
-} from "react-icons/bs"
+} from 'react-icons/bs';
 import {
   AiOutlineEllipsis,
   AiOutlineWarning,
   AiOutlinePlus,
   AiOutlineClose,
   AiOutlineFileSearch,
-} from "react-icons/ai"
-import { MdDeleteForever, MdOutlineLogout } from "react-icons/md"
-import { BiHistory, BiCalendar, BiBarChartAlt } from "react-icons/bi"
-import { FaUserAlt, FaSort } from "react-icons/fa"
-import { ImSpinner8, ImStatsBars } from "react-icons/im"
-import { RxMixerHorizontal } from "react-icons/rx"
-import { LuSettings } from "react-icons/lu"
+} from 'react-icons/ai';
+import { MdDeleteForever, MdOutlineLogout } from 'react-icons/md';
+import { BiHistory, BiCalendar, BiBarChartAlt } from 'react-icons/bi';
+import { FaUserAlt, FaSort } from 'react-icons/fa';
+import { ImSpinner8, ImStatsBars } from 'react-icons/im';
+import { RxMixerHorizontal } from 'react-icons/rx';
+import { LuSettings } from 'react-icons/lu';
 
-export type IconKeys = keyof typeof icons
+export type IconKeys = keyof typeof icons;
 
 type IconsType = {
-  [key in IconKeys]: React.ElementType
-}
+  [key in IconKeys]: React.ElementType;
+};
 
 // ** Custom svg or images can be used as icons by returning a JSX **
 const icons = {
   // Custom icons
   blank: () => {
-    return <></>
+    return <></>;
   },
   nextjs: () => {
     return (
@@ -44,7 +44,7 @@ const icons = {
         height={100}
         alt="Card image"
       />
-    )
+    );
   },
   shadcnUi: () => {
     return (
@@ -55,7 +55,7 @@ const icons = {
         height={100}
         alt="Card image"
       />
-    )
+    );
   },
   vercel: () => {
     return (
@@ -66,7 +66,7 @@ const icons = {
         height={100}
         alt="Card image"
       />
-    )
+    );
   },
 
   // Features
@@ -100,6 +100,6 @@ const icons = {
   statsBar: ImStatsBars,
   mixer: RxMixerHorizontal,
   check: BsCheck2,
-}
+};
 
-export const Icons: IconsType = icons
+export const Icons: IconsType = icons;
