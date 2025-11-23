@@ -31,7 +31,7 @@ export default function Navbar() {
               {siteConfig.name}
             </h1>
           </Link>
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-1 md:hidden">
             <button
               className="text-primary focus:border-primary rounded-md p-2 outline-none focus:border"
               aria-label="Hamburger Menu"
