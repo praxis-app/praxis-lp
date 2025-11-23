@@ -28,8 +28,9 @@ export default function HeroHeader() {
         <div className="flex flex-1 justify-center lg:justify-end">
           <Image
             src={heroHeader.image}
-            width={500}
-            height={500}
+            width={650}
+            height={650}
+            className="w-82 object-contain md:w-[500px]"
             alt="Header image"
           />
         </div>
