@@ -24,11 +24,14 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 
-RUN apk add --no-cache gcompat
+RUN apk add --no-cache gcompat wget
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/.next/standalone ./
+
+RUN chown -R node:node /app
+USER node
 
 EXPOSE 3000
 
