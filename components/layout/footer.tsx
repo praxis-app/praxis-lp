@@ -5,7 +5,7 @@ import { navLinks } from '@/lib/links';
 export default function Footer() {
   return (
     <footer className="mt-auto">
-      <div className="mx-auto w-full max-w-screen-xl p-6 md:py-8">
+      <div className="mx-auto w-full max-w-7xl p-6 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <Link href="/">
             <h1 className="mb-2 text-2xl font-bold sm:mb-0">

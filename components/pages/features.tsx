@@ -24,7 +24,7 @@ export default function Features() {
                 className="flex flex-col items-center gap-2 px-4 text-center md:flex-row md:gap-8 md:px-0 md:text-left"
               >
                 <div className="flex">
-                  <Icon className="h-[6rem] w-[6rem]" />
+                  <Icon className="h-24 w-24" />
                 </div>
                 <div className="flex-1">
                   <p className="md:text4xl text-2xl font-semibold">
