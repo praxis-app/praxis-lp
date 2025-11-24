@@ -8,8 +8,8 @@ import { HeroHeader, ContentSection } from '@/types/contents';
  ==================== */
 
 export const heroHeader: HeroHeader = {
-  header: `Landing pages made easy`,
-  subheader: `Easy to setup. Customizable. Quick. Responsive.`,
+  header: `Responsible AI made easy`,
+  subheader: `Build ethically. Grow confidently. Deploy safely.`,
   image: `/hero-img.webp`,
 };
 
