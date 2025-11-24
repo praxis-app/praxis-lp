@@ -5,7 +5,7 @@ import { Icons } from '@/components/icons';
 export default function Features() {
   return (
     <section
-      className="container mx-auto space-y-8 px-4 py-12 lg:py-20"
+      className="mx-auto space-y-8 px-4 py-12 md:px-13 lg:py-20"
       id="features"
     >
       {features.header || features.subheader ? (
