@@ -6,13 +6,13 @@ import { Icons } from '@/components/icons';
 export default function FeatureCards() {
   return (
     <section className="bg-slate-50 dark:bg-slate-900">
-      <div className="container mx-auto space-y-8 px-4 py-12 text-center lg:py-20">
+      <div className="space-y-8 px-4 py-12 text-center lg:py-20">
         {featureCards.header || featureCards.subheader ? (
           <HeadingText subtext={featureCards.subheader}>
             {featureCards.header}
           </HeadingText>
         ) : null}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 px-4 md:grid-cols-3 lg:px-9">
           {featureCards.content.map((cards) => {
             const Icon = Icons[cards.icon || 'blank'];
 
