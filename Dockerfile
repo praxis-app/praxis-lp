@@ -12,8 +12,12 @@ COPY next.config.ts ./
 COPY tsconfig.json ./
 COPY postcss.config.mjs ./
 COPY eslint.config.mjs ./
-COPY public ./public
+COPY tailwind.config.ts ./
+COPY components.json ./
+COPY next-env.d.ts ./
+
 COPY src ./src
+COPY public ./public
 
 RUN npm run build
 

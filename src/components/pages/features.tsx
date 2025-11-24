@@ -1,0 +1,52 @@
+import HeadingText from '@/components/heading-text';
+import { features } from '@/config/contents';
+import { Icons } from '@/components/icons';
+
+export default function Features() {
+  return (
+    <section
+      className="mx-auto space-y-8 px-4 py-12 md:px-13 lg:py-20"
+      id="features"
+    >
+      {features.header || features.subheader ? (
+        <HeadingText subtext={features.subheader} className="text-center">
+          {features.header}
+        </HeadingText>
+      ) : null}
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8">
+          {features.content.map((cards) => {
+            const Icon = Icons[cards.icon || 'blank'];
+
+            return (
+              <div
+                key={cards.text}
+                className="flex flex-col items-center gap-2 px-4 text-center md:flex-row md:gap-8 md:px-0 md:text-left"
+              >
+                <div className="flex">
+                  <Icon className="h-24 w-24" />
+                </div>
+                <div className="flex-1">
+                  <p className="md:text4xl text-2xl font-semibold">
+                    {cards.text}
+                  </p>
+                  <p className="text-muted-foreground font-light md:text-lg">
+                    {cards.subtext}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div
+          className="bg-cover bg-center md:border"
+          style={{
+            backgroundImage: `url(${features.image})`,
+            backgroundRepeat: `no-repeat`,
+            backgroundSize: `cover`,
+          }}
+        />
+      </div>
+    </section>
+  );
+}

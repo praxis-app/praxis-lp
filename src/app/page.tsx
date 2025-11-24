@@ -1,15 +1,13 @@
-import { Button } from '../components/ui/button';
+import Hero from '@/components/pages/hero';
+import FeatureCards from '@/components/pages/feature-cards';
+import Features from '@/components/pages/features';
 
 export default function Home() {
   return (
-    <div>
-      <main>
-        <h1 className="mt-20 text-center text-4xl font-bold">Praxis LP</h1>
-
-        <div className="mt-10 flex justify-center">
-          <Button>Click me</Button>
-        </div>
-      </main>
-    </div>
+    <main>
+      <Hero />
+      <FeatureCards />
+      <Features />
+    </main>
   );
 }
