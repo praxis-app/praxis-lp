@@ -14,7 +14,6 @@ COPY postcss.config.mjs ./
 COPY eslint.config.mjs ./
 COPY tailwind.config.ts ./
 COPY components.json ./
-COPY next-env.d.ts ./
 
 COPY src ./src
 COPY public ./public
