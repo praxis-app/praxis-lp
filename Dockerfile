@@ -16,12 +16,8 @@ COPY tailwind.config.ts ./
 COPY components.json ./
 COPY next-env.d.ts ./
 
-COPY app ./app
-COPY components ./components
-COPY config ./config
-COPY lib ./lib
+COPY src ./src
 COPY public ./public
-COPY types ./types
 
 RUN npm run build
 
