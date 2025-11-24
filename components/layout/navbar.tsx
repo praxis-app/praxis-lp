@@ -33,7 +33,7 @@ export default function Navbar() {
           </Link>
           <div className="flex items-center gap-1 md:hidden">
             <button
-              className="text-primary focus:border-primary rounded-md p-2 outline-none focus:border"
+              className="text-primary rounded-md p-2 outline-none"
               aria-label="Hamburger Menu"
               onClick={() => setNavbar(!navbar)}
             >
