@@ -1,7 +1,10 @@
 FROM node:24.11.1-alpine AS builder
 
 WORKDIR /app
-ENV NEXT_TELEMETRY_DISABLED=1
+
+ARG NODE_ENV
+ARG PORT
+ARG NEXT_TELEMETRY_DISABLED
 
 RUN apk add --no-cache gcompat
 
@@ -22,12 +25,9 @@ RUN npm run build
 
 FROM node:24.11.1-alpine AS runner
 
-WORKDIR /app
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
-
 RUN apk add --no-cache gcompat wget
 
+WORKDIR /app
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/.next/standalone ./
